@@ -10,13 +10,13 @@
       <p>{{ form.non_field_errors }}</p>
       <p>First Name{{form.first_name }}
       <p>Last Name{{form.last_name}}</p>
-      <p>Project Url {{form.project_url}}</p>
+      <p>Project Url {{form.projects_url}}</p>
       <p>Code Url {{form.code_url}}
 
-      <p>{{ form.file.label_tag }} {{ form.file.help_text }}</p>
+      <p>{{ form.resume.label_tag }} {{ form.file.help_text }}</p>
       <p>
           {{ form.file.errors }}
-          {{ form.file }}
+          {{ form.resume }}
       </p>
       <p><input type="submit" value="Upload" /></p>
     </form>
