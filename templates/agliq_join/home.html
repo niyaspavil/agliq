@@ -11,14 +11,22 @@
   </head>
 
   <body>
+    
     <div class="container">
-      <form id = 'resume_form' method ="post" 
+    <div class="container_fluid">
+     <div class="row-fluid">
+     <div class="span9">
+       
+      <div class="hero-unit">
+	<div class="container">
+      <h2 class="form-signin-heading">Upload Resume</h2>
+      <form class="form-signin span8" id = 'resume_form' method ="post" 
 	  action = 'http://join.agiliq.com/api/resume/upload/?access_token={{acesstoken}}' 
 	  enctype="multipart/form-data">
 	{% csrf_token %}
 	<p>{{ form.non_field_errors }}</p>
-	<p>First Name{{form.first_name }}
-	<p>Last Name{{form.last_name}}</p>
+	<p>First Name {{form.first_name }}
+	<p>Last Name {{form.last_name}}</p>
 	<p>Project Url {{form.projects_url}}</p>
 	<p>Code Url {{form.code_url}}
 
@@ -30,5 +38,9 @@
 	<p><input type="submit" value="Upload" /></p>
       </form>
     </div>
+    </div>
+    </div>
+    </div>
+     </div>
   </body>
 </html>
