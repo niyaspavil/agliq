@@ -1,0 +1,23 @@
+<! DOCTYPE html>
+<html>
+  <head>
+      <title> Upload Resume </title> 
+  </head>
+
+  <body>
+    <form id = 'resume_form' method ="post" action = 'http://join.agiliq.com/api/resume/upload/?access_token={{acesstoken}}' enctype="multipart/form-data">
+      {% csrf_token %}
+      <p>{{ form.non_field_errors }}</p>
+      <p>First Name{{form.first_name }}
+      <p>Last Name{{form.last_name}}</p>
+      <p>Project Url {{form.project_url}}</p>
+      <p>Code Url {{form.code_url}}
+
+      <p>{{ form.file.label_tag }} {{ form.file.help_text }}</p>
+      <p>
+          {{ form.file.errors }}
+          {{ form.file }}
+      </p>
+      <p><input type="submit" value="Upload" /></p>
+    </form>
+  </body>
