@@ -1,23 +1,34 @@
 <! DOCTYPE html>
+{% load static %}
 <html>
   <head>
+    
+        <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'>
+        <link href= "{% static 'css/bootstrap-fluid-adj.css' %}" rel ='stylesheet'>
+        <link href= "{% static 'css/bootstrap.min.css'%}" rel="stylesheet" media="screen">
+        <link href="{% static 'css/bootstrap-responsive.css'%}" rel="stylesheet">
       <title> Upload Resume </title> 
   </head>
 
   <body>
-    <form id = 'resume_form' method ="post" action = 'http://join.agiliq.com/api/resume/upload/?access_token={{acesstoken}}' enctype="multipart/form-data">
-      {% csrf_token %}
-      <p>{{ form.non_field_errors }}</p>
-      <p>First Name{{form.first_name }}
-      <p>Last Name{{form.last_name}}</p>
-      <p>Project Url {{form.projects_url}}</p>
-      <p>Code Url {{form.code_url}}
+    <div class="container">
+      <form id = 'resume_form' method ="post" 
+	  action = 'http://join.agiliq.com/api/resume/upload/?access_token={{acesstoken}}' 
+	  enctype="multipart/form-data">
+	{% csrf_token %}
+	<p>{{ form.non_field_errors }}</p>
+	<p>First Name{{form.first_name }}
+	<p>Last Name{{form.last_name}}</p>
+	<p>Project Url {{form.projects_url}}</p>
+	<p>Code Url {{form.code_url}}
 
-      <p>{{ form.resume.label_tag }} {{ form.file.help_text }}</p>
-      <p>
+	<p>{{ form.resume.label_tag }} {{ form.file.help_text }}</p>
+	<p>
           {{ form.file.errors }}
           {{ form.resume }}
-      </p>
-      <p><input type="submit" value="Upload" /></p>
-    </form>
+	</p>
+	<p><input type="submit" value="Upload" /></p>
+      </form>
+    </div>
   </body>
+</html>
